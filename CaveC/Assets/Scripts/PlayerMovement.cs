@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator animator;
-    [SerializeField] private CapsuleCollider2D feetCapCollider;
+    private CustomColider customCollider;
 
     [Header("Movement")]
     [SerializeField] float moveSpeed = 10f;
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
+        customCollider = GetComponent<CustomColider>();
         startGravScale = rb.gravityScale;
     }
 
@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour
     private void Climbing()
     {
         // check if player can climb
-        if (feetCapCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) {
+        if (customCollider.isTouching(LayerMask.GetMask("Ladder"))) {
+            //customCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))
         
         // climbing movement
         rb.gravityScale = 0f;
@@ -71,16 +72,24 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnJump(InputValue value) {
-        if(!feetCapCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
+        if(!customCollider.isTouching(LayerMask.GetMask("Ground"), Vector2.down))return; 
         if(value.isPressed) {
             rb.velocity += new Vector2 (0f, jumpForce);
         }
     }
     
     void Run() {
-        Vector2 playerVelocity = new Vector2 (moveInput.x * moveSpeed, rb.velocity.y);
+
+        // check wall collision
+        float hInput = moveInput.x;
+        if(customCollider.isTouching(LayerMask.GetMask("Ground"), Vector2.right)) hInput = Mathf.Clamp(hInput, float.MinValue, 0f);
+        else if(customCollider.isTouching(LayerMask.GetMask("Ground"), Vector2.left)) hInput = Mathf.Clamp(hInput, 0f, float.MaxValue);
+
+        //run calculations
+        Vector2 playerVelocity = new Vector2 (hInput * moveSpeed, rb.velocity.y);
         rb.velocity = playerVelocity;
         
+        //animation
        animator.SetBool("isRunning", playerHasHorizontalSpeed);
     }
     

@@ -30716,7 +30716,7 @@ PolygonCollider2D:
     - - {x: 1.5, y: 26.70724}
       - {x: -30.996517, y: 26.989279}
       - {x: -30.73471, y: -11.16374}
-      - {x: 32.842113, y: -11.386885}
+      - {x: 33.7522, y: -11.02285}
       - {x: 33.221684, y: 26.766132}
 --- !u!1 &1084287553
 GameObject:
@@ -40944,6 +40944,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!70 &1573864312 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 515522857945674393, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+  m_PrefabInstance: {fileID: 515522857945674391}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1754685580
 GameObject:
   m_ObjectHideFlags: 0
@@ -41288,6 +41293,74 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 31217185842447696, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: gizmos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 31217185842447696, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: rayBuffer
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 31217185842447696, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: detectorCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 31217185842447696, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: rayBoundsScale
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 31217185842447696, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: capsuleCollider
+      value: 
+      objectReference: {fileID: 1573864312}
+    - target: {fileID: 31217185842447696, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: detectionRayLength
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 31217185842447696, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: characterBounds.m_Center.x
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 31217185842447696, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: characterBounds.m_Center.y
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 31217185842447696, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: characterBounds.m_Extent.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 31217185842447696, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: characterBounds.m_Extent.y
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 515522857945674393, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: m_Size.x
+      value: 0.56318486
+      objectReference: {fileID: 0}
+    - target: {fileID: 515522857945674393, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: m_Size.y
+      value: 0.88174105
+      objectReference: {fileID: 0}
+    - target: {fileID: 515522857945674393, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 515522857945674393, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.036727726
+      objectReference: {fileID: 0}
+    - target: {fileID: 515522857945674393, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.055100203
+      objectReference: {fileID: 0}
+    - target: {fileID: 515522857945674394, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: m_GravityScale
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 515522857945674396, guid: 56066d9b32171174daa5a764d202828d, type: 3}
+      propertyPath: jumpForce
+      value: 10.5
+      objectReference: {fileID: 0}
     - target: {fileID: 515522858449466177, guid: 56066d9b32171174daa5a764d202828d, type: 3}
       propertyPath: m_Name
       value: Jaff(Player)
@@ -41336,7 +41409,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 515522857945674400, guid: 56066d9b32171174daa5a764d202828d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 56066d9b32171174daa5a764d202828d, type: 3}
 --- !u!95 &515522857945674398 stripped
 Animator:
