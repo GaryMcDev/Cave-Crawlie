@@ -1,2 +1,2 @@
 # Cave-Crawlie
-2D platformer thing
+2D platformer test project
